@@ -63,4 +63,15 @@ int main() {
     }
     
     return 0;
+
+    
 }
+
+void afegirProducte() {
+        printf("Introdueix el nom del producte: ");
+        scanf("%s", producte.nom);
+        printf("Introdueix la quantitat: ");
+        scanf("%d", &producte.quantitat);
+        printf("Introdueix el preu: ");
+        scanf("%f", &producte.preu);
+    }
