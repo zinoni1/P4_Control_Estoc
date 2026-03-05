@@ -7,6 +7,13 @@ int quantitat;
 float preu;
 } Producte;
 
+void mostrarProductes(Producte magatzem[], int numProductes);
+Producte* cercarProducte(Producte magatzem[], int numProductes, int id);
+void vendreProducte(Producte magatzem[], int numProductes);
+void reposarProducte(Producte magatzem[], int numProductes);
+float calcularValorTotal(Producte magatzem[], int numProductes);
+Producte* producteAmbMenysEstoc(Producte magatzem[], int numProductes);
+
 int main() {
     int opcion;
     
@@ -39,6 +46,7 @@ int main() {
                 break;
             case 5:
                 printf("Cercar producte per ID\n");
+
                 break;
             case 6:
                 printf("Valor total del magatzem\n");
