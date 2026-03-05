@@ -10,7 +10,7 @@ typedef struct
 
 void afegirProducte(Producte *producte);
 void mostrarProductes(Producte magatzem[], int numProductes);
-Producte *cercarProducte(Producte magatzem[], int numProductes, int id);
+void cercarProducte(Producte magatzem[], int numProductes);  
 void vendreProducte(Producte magatzem[], int numProductes);
 void reposarProducte(Producte magatzem[], int numProductes);
 float calcularValorTotal(Producte magatzem[], int numProductes);
@@ -62,6 +62,7 @@ int main()
             break;
         case 5:
             printf("Cercar producte per ID\n");
+            cercarProducte(magatzem, numProductes);
 
             break;
         case 6:
@@ -107,4 +108,21 @@ void mostrarProductes(Producte magatzem[], int numProductes)
             printf("ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n", magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
         }
     }
+}
+void cercarProducte(Producte magatzem[], int numProductes)
+{
+    int id;
+    printf("Introdueix l'id del producte a cercar: ");
+    scanf("%d", &id);                              // ✅ pedir el id ANTES de buscar
+
+    for (int i = 0; i < numProductes; i++)         // ✅ "int i" no "int = 0"
+    {
+        if (magatzem[i].id == id)                  // ✅ usar i, no x
+        {
+            printf("Producte trobat: ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n",
+                   magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
+            return;
+        }
+    }
+    printf("Producte no trobat\n");                // ✅ fuera del bucle, solo si no se encontró
 }
