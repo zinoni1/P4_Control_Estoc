@@ -100,20 +100,30 @@ void mostrarProductes(Producte magatzem[], int numProductes){
         printf("No hi ha productes al magatzem.\n");
         return;
     } else {
+        printf("-----------------------------------------------\n");
         for (int i = 0; i < numProductes; i++) {
             printf("ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n", magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
         }
+        printf("-----------------------------------------------\n");
     }
 }
 void cercarProducte(Producte magatzem[], int numProductes){
     int id;
+    printf("-------------------\n");
+    for (int i = 0; i < numProductes; i++) {
+        printf("ID: %d, Nom: %s\n", magatzem[i].id, magatzem[i].nom);
+    }
+    printf("-------------------\n");
+    printf("\n");
     printf("Introdueix l'id del producte a cercar: ");
     scanf("%d", &id);
 
     for (int i = 0; i < numProductes; i++) {
         if (magatzem[i].id == id){
+            printf("--------------------------------------------------------------\n");
             printf("Producte trobat: ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n",
                    magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
+            printf("--------------------------------------------------------------\n");
             return;
         }
     }
