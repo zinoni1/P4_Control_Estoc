@@ -10,7 +10,7 @@ typedef struct
 
 void afegirProducte(Producte *producte, int *numProductes, Producte magatzem[]);
 void mostrarProductes(Producte magatzem[], int numProductes);
-void cercarProducte(Producte magatzem[], int numProductes);
+Producte* cercarProducte(Producte magatzem[], int numProductes);
 void vendreProducte(Producte magatzem[], int numProductes);
 void reposarProducte(Producte magatzem[], int numProductes);
 void calcularValorTotal(Producte magatzem[], int numProductes);
@@ -109,7 +109,7 @@ void mostrarProductes(Producte magatzem[], int numProductes){
         printf("-----------------------------------------------\n");
     }
 }
-void cercarProducte(Producte magatzem[], int numProductes){
+ Producte* cercarProducte(Producte magatzem[], int numProductes){
     int id;
     printf("-------------------\n");
     for (int i = 0; i < numProductes; i++) {
@@ -126,7 +126,7 @@ void cercarProducte(Producte magatzem[], int numProductes){
             printf("Producte trobat: ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n",
                    magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
             printf("--------------------------------------------------------------\n");
-            return;
+            return &magatzem[i];
         }
     }
     printf("Producte no trobat\n");
