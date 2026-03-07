@@ -67,6 +67,12 @@ int main()
             break;
         case 7:
             printf("Producte amb menys estoc\n");
+            printf("Quantitat de productes al magatzem: %d\n", numProductes);
+             Producte* p = producteAmbMenysEstoc(magatzem, numProductes);
+            if (p != NULL)
+                printf("Producte amb menys estoc: %s (%d unitats)\n", p->nom, p->quantitat);
+
+    return 0;
             break;
         case 0:
             printf("Sortint...\n");
@@ -192,4 +198,17 @@ void calcularValorTotal(Producte magatzem[], int numProductes){
     printf("----------------------------------------\n");
     printf("Valor total del magatzem: %.2f\n", valorTotal);
     printf("----------------------------------------\n");
+}
+Producte* producteAmbMenysEstoc(Producte magatzem[], int numProductes) {
+    if (numProductes == 0) {
+        printf("No hi ha productes al magatzem.\n");
+        return NULL;
+    }
+    Producte* producteMenysEstoc = &magatzem[0];
+    for (int i = 1; i < numProductes; i++) {
+        if (magatzem[i].quantitat < producteMenysEstoc->quantitat) {
+            producteMenysEstoc = &magatzem[i];
+        }
+    }
+    return producteMenysEstoc;
 }
