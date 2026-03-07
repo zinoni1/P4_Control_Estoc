@@ -13,7 +13,7 @@ void mostrarProductes(Producte magatzem[], int numProductes);
 Producte* cercarProducte(Producte magatzem[], int numProductes);
 void vendreProducte(Producte magatzem[], int numProductes);
 void reposarProducte(Producte magatzem[], int numProductes);
-void calcularValorTotal(Producte magatzem[], int numProductes);
+float calcularValorTotal(Producte magatzem[], int numProductes);
 Producte* producteAmbMenysEstoc(Producte magatzem[], int numProductes);
 void producteAmbMenysEstocFinal(Producte magatzem[], int numProductes);
 
@@ -63,7 +63,6 @@ int main()
 
             break;
         case 6:
-            printf("Valor total del magatzem\n");
             calcularValorTotal(magatzem, numProductes);
             break;
         case 7:
@@ -185,7 +184,7 @@ void vendreProducte(Producte magatzem[], int numProductes){
     printf("Producte no trobat\n");
 }
 
-void calcularValorTotal(Producte magatzem[], int numProductes){
+float calcularValorTotal(Producte magatzem[], int numProductes){
     float valorTotal = 0.0;
 
     for (int i = 0; i < numProductes; i++) {
