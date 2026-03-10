@@ -11,8 +11,6 @@
 ## 📝 Descripció
 Aquest programa és una eina de gestió d'inventari desenvolupada en **Llenguatge C**. Permet administrar un magatzem de fins a 10 productes mitjançant una interfície de consola intuïtiva, utilitzant estructures de dades (`struct`) i punters per a una gestió eficient de la memòria.
 
-> **Ideal per a:** Estudiants o desenvolupadors que busquin un exemple sòlid de manipulació de matrius d'estructures en C.
-
 ---
 
 ## ✨ Característiques Principals
