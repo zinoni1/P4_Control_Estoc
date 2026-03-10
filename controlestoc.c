@@ -98,7 +98,7 @@ void afegirProducte(Producte *producte, int *numProductes, Producte magatzem[]){
     
 void mostrarProductes(Producte magatzem[], int numProductes){
     if (numProductes == 0) {
-        printf("No hi ha productes al magatzem.\n");
+        printf("El magatzem està buit.\n");
         return;
     } else {
         printf("-----------------------------------------------\n");
@@ -176,7 +176,7 @@ void vendreProducte(Producte magatzem[], int numProductes){
                 printf("Venda realitzada. Quantitat restant: %d\n", magatzem[i].quantitat);
                 printf("----------------------------------------\n");
             } else {
-                printf("No hi ha suficient estoc per a aquesta venda.\n");
+                printf("ERROR: No hi ha stock al magatzem\n");
             }
             return;
         }
@@ -196,7 +196,7 @@ float calcularValorTotal(Producte magatzem[], int numProductes){
 }
 Producte* producteAmbMenysEstoc(Producte magatzem[], int numProductes) {
     if (numProductes == 0) {
-        printf("No hi ha productes al magatzem.\n");
+        printf("ERROR: No hi ha stock de cap producte al magatzem \n");
         return NULL;
     }
     Producte* producteMenysEstoc = &magatzem[0];
