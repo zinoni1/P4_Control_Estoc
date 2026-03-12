@@ -128,7 +128,7 @@ void mostrarProductes(Producte magatzem[], int numProductes){
             return &magatzem[i];
         }
     }
-    printf("No hi ha suficient stock per aquesta venda\n");
+    printf("No s'ha trobat cap producte amb aquest ID\n");
 }
 void reposarProducte(Producte magatzem[], int numProductes){
     int id, quantitat;
@@ -157,10 +157,11 @@ void reposarProducte(Producte magatzem[], int numProductes){
 }
 void vendreProducte(Producte magatzem[], int numProductes){
     int id, quantitat;
-
+    printf("------------------------------------------------\n");
     for(int i = 0; i < numProductes; i++) {
         printf("ID: %d, Nom: %s, Quantitat: %d, Preu: %.2f\n", magatzem[i].id, magatzem[i].nom, magatzem[i].quantitat, magatzem[i].preu);
     }
+    printf("------------------------------------------------\n");
 
     printf("Introdueix l'id del producte a vendre: ");
     scanf("%d", &id);
