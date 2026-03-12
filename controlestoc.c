@@ -196,7 +196,7 @@ float calcularValorTotal(Producte magatzem[], int numProductes){
 }
 Producte* producteAmbMenysEstoc(Producte magatzem[], int numProductes) {
     if (numProductes == 0) {
-        printf("ERROR: No hi ha stock de cap producte al magatzem \n");
+        printf("No hi ha productes al magatzem\n");
         return NULL;
     }
     Producte* producteMenysEstoc = &magatzem[0];
