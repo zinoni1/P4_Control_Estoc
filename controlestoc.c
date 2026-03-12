@@ -176,7 +176,7 @@ void vendreProducte(Producte magatzem[], int numProductes){
                 printf("Venda realitzada. Quantitat restant: %d\n", magatzem[i].quantitat);
                 printf("----------------------------------------\n");
             } else {
-                printf("ERROR: No hi ha stock al magatzem\n");
+                printf("No hi ha prou stock del producte\n");
             }
             return;
         }
