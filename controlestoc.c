@@ -98,7 +98,7 @@ void afegirProducte(Producte *producte, int *numProductes, Producte magatzem[]){
     
 void mostrarProductes(Producte magatzem[], int numProductes){
     if (numProductes == 0) {
-        printf("El magatzem està buit.\n");
+        printf("No hi ha productes al magatzem.\n");
         return;
     } else {
         printf("-----------------------------------------------\n");
@@ -128,7 +128,7 @@ void mostrarProductes(Producte magatzem[], int numProductes){
             return &magatzem[i];
         }
     }
-    printf("Producte no trobat\n");
+    printf("No hi ha suficient stock per aquesta venda\n");
 }
 void reposarProducte(Producte magatzem[], int numProductes){
     int id, quantitat;
